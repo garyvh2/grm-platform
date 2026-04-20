@@ -1,0 +1,36 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Section > renders with complex children 1`] = `
+<section
+  aria-labelledby="_r_1_"
+  class="mb-8"
+>
+  <h2
+    class="mb-3 text-lg font-semibold text-slate-800"
+    id="_r_1_"
+  >
+    2. Search
+  </h2>
+  <p>
+    Paragraph one
+  </p>
+  <p>
+    Paragraph two
+  </p>
+</section>
+`;
+
+exports[`Section > renders with simple children 1`] = `
+<section
+  aria-labelledby="_r_0_"
+  class="mb-8"
+>
+  <h2
+    class="mb-3 text-lg font-semibold text-slate-800"
+    id="_r_0_"
+  >
+    Step 1
+  </h2>
+  Content here
+</section>
+`;

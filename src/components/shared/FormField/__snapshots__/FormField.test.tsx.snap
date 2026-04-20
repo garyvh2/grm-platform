@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FormField > renders label wrapping a text input 1`] = `
+<label
+  class="flex flex-col gap-1 text-sm font-medium text-slate-700"
+>
+  Name
+  <input
+    type="text"
+  />
+</label>
+`;
+
+exports[`FormField > renders label wrapping multiple children 1`] = `
+<label
+  class="flex flex-col gap-1 text-sm font-medium text-slate-700"
+>
+  Combo
+  <input
+    type="text"
+  />
+  <span>
+    Helper text
+  </span>
+</label>
+`;

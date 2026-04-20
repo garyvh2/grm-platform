@@ -1,0 +1,3 @@
+Partner|Usage
+ArchiveHub|digital download
+ArchiveHub|streaming

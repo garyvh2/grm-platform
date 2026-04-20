@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Input > renders a date input 1`] = `
+<input
+  class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm transition outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-indigo-600"
+  readonly=""
+  type="date"
+  value="2024-01-01"
+/>
+`;
+
+exports[`Input > renders a text input 1`] = `
+<input
+  class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm transition outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-indigo-600"
+  placeholder="Type..."
+  type="text"
+/>
+`;
+
+exports[`Input > renders disabled state 1`] = `
+<input
+  class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm transition outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-indigo-600"
+  disabled=""
+/>
+`;

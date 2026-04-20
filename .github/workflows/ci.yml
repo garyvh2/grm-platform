@@ -1,0 +1,141 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  ci:
+    name: Lint · Test · Build
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Format check
+        run: npm run format:check
+
+      - name: Unit & component tests with coverage
+        run: npm run test:coverage
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Playwright (skip if cached)
+        run: npx playwright install chromium --dry-run 2>/dev/null || npx playwright install chromium
+
+      - name: Kill stale preview server
+        run: lsof -ti:4173 | xargs kill -9 2>/dev/null || true
+
+      - name: E2E tests
+        run: npm run test:e2e
+
+      - name: Upload coverage summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: test-results/
+
+      # ── Coverage badge ─────────────────────────────────────────────────
+      - name: Extract coverage percentage
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        id: coverage
+        run: |
+          COVERAGE=$(node -e "
+            const c = require('./coverage/coverage-summary.json');
+            console.log(c.total.statements.pct);
+          ")
+          echo "pct=${COVERAGE}" >> "$GITHUB_OUTPUT"
+
+          if (( $(echo "$COVERAGE >= 90" | bc -l) )); then
+            echo "color=brightgreen" >> "$GITHUB_OUTPUT"
+          elif (( $(echo "$COVERAGE >= 75" | bc -l) )); then
+            echo "color=yellow" >> "$GITHUB_OUTPUT"
+          else
+            echo "color=red" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update coverage badge
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push' && env.GIST_SECRET != ''
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        env:
+          GIST_SECRET: ${{ secrets.GIST_SECRET }}
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: ${{ vars.COVERAGE_GIST_ID }}
+          filename: grm-platform-coverage.json
+          label: coverage
+          message: "${{ steps.coverage.outputs.pct }}%"
+          color: "${{ steps.coverage.outputs.color }}"
+
+      # ── Prepare Pages artifact (reuse the build from CI) ───────────────
+      - name: Rebuild for GitHub Pages
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        run: npx vite build --base=/grm-platform/
+
+      - name: Ensure GNU tar (skip if installed)
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        run: |
+          if gtar --version 2>&1 | grep -q "GNU tar"; then
+            echo "GNU tar already installed, skipping"
+          else
+            brew install gnu-tar
+            sudo ln -sf "$(brew --prefix gnu-tar)/bin/gtar" /usr/local/bin/gtar
+          fi
+          gtar --version
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  # ── GitHub Pages deployment ──────────────────────────────────────────
+  deploy:
+    name: Deploy to Pages
+    needs: ci
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    runs-on: self-hosted
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

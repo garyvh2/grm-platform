@@ -1,0 +1,2 @@
+Artist|Title|Usages|StartDate|EndDate
+Solo Artist|Only Track|digital download|2023-01-15|

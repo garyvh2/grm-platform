@@ -1,0 +1,7 @@
+Artist|Title|Usages|StartDate|EndDate
+Edge Case|Starts Today|digital download|2024-06-15|
+Edge Case|Ends Today|streaming|2024-01-01|2024-06-15
+Edge Case|Ended Yesterday|digital download|2024-01-01|2024-06-14
+Edge Case|Starts Tomorrow|streaming|2024-06-16|
+Boundary Act|Same Day Contract|digital download, streaming|2024-06-15|2024-06-15
+Boundary Act|Long Runner|digital download|2020-01-01|2030-12-31

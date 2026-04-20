@@ -1,0 +1,6 @@
+Artist|Title|Usages|StartDate|EndDate
+José González|Heartbeats (Acoustic)|digital download, streaming|2018-05-01|
+Björk & The Sugarcubes|Möbius Strip|streaming|2019-11-15|
+Sigur Rós|Hoppípolla — Remix|digital download|2020-03-01|2023-12-31
+Naïve Café|L'Été Dernier|digital download, streaming|2021-07-14|
+Sigur Rós|( )|streaming|2019-01-01|

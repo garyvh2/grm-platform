@@ -1,0 +1,4 @@
+Partner|Usage
+Deezer|digital download
+Deezer|streaming
+StreamCo|streaming

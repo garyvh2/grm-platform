@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PageHeader > renders with title and subtitle 1`] = `
+<header
+  class="mb-8 border-b-2 border-slate-200 pb-6 text-center"
+>
+  <h1
+    class="text-3xl font-bold tracking-tight text-slate-900"
+  >
+    My App
+  </h1>
+  <p
+    class="mt-1 text-slate-500"
+  >
+    A great app
+  </p>
+</header>
+`;
+
+exports[`PageHeader > renders with title only 1`] = `
+<header
+  class="mb-8 border-b-2 border-slate-200 pb-6 text-center"
+>
+  <h1
+    class="text-3xl font-bold tracking-tight text-slate-900"
+  >
+    My App
+  </h1>
+</header>
+`;

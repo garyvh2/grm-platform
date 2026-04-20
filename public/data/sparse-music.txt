@@ -1,0 +1,5 @@
+Artist|Title|Usages|StartDate|EndDate
+Ghost Band|Vanished|digital download|2010-01-01|2010-06-30
+Ghost Band|Forgotten|streaming|2010-03-01|2010-09-30
+Lone Wolf|Sole Survivor|digital download|2023-01-01|
+Lone Wolf|Out of Reach|streaming|2025-01-01|

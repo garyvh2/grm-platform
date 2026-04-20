@@ -1,0 +1,6 @@
+Artist|Title|Usages|StartDate|EndDate
+Alpha Band|First Light|digital download, streaming|2020-01-01|
+Alpha Band|Sunset Groove|streaming|2020-06-15|2020-12-31
+Beta Crew|Ocean Drive|digital download|2019-03-01|2021-06-30
+Beta Crew|Night Sky|digital download, streaming|2021-01-01|
+Gamma Solo|One Hit Wonder|digital download|2022-05-01|2022-05-31

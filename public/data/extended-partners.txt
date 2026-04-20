@@ -1,0 +1,5 @@
+Partner|Usage
+Spotify|streaming
+AmazonMusic|digital download
+MegaStream|digital download
+MegaStream|streaming

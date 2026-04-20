@@ -1,0 +1,4 @@
+Artist|Title|Usages|StartDate|EndDate
+Old Timer|Ancient Song|digital download|2000-01-01|2000-12-31
+Old Timer|Forgotten Tune|streaming|2001-06-01|2002-05-31
+Retro Band|Holiday Hit|digital download, streaming|2005-12-01|2006-01-15

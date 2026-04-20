@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card > renders with children 1`] = `
+<div
+  class="rounded-lg border border-slate-200 bg-slate-50 p-5"
+>
+  Card content
+</div>
+`;
+
+exports[`Card > renders with complex children 1`] = `
+<div
+  class="rounded-lg border border-slate-200 bg-slate-50 p-5"
+>
+  <h3>
+    Title
+  </h3>
+  <p>
+    Description
+  </p>
+</div>
+`;
+
+exports[`Card > renders with extra className 1`] = `
+<div
+  class="rounded-lg border border-slate-200 bg-slate-50 p-5 flex gap-4"
+>
+  Styled
+</div>
+`;

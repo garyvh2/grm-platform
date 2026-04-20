@@ -1,0 +1,5 @@
+Partner|Usage
+RetroShop|digital download
+FutureStream|streaming
+MixMaster|digital download
+MixMaster|streaming

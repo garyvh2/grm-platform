@@ -1,0 +1,4 @@
+Partner|Usage
+AllAccess|digital download
+AllAccess|streaming
+DownloadOnly|digital download

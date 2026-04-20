@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button > renders default state 1`] = `
+<button
+  class="rounded-md bg-indigo-600 px-5 py-2 text-sm font-medium text-white shadow-sm transition outline-none hover:bg-indigo-700 focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+  type="button"
+>
+  Search
+</button>
+`;
+
+exports[`Button > renders disabled state 1`] = `
+<button
+  class="rounded-md bg-indigo-600 px-5 py-2 text-sm font-medium text-white shadow-sm transition outline-none hover:bg-indigo-700 focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+  disabled=""
+  type="button"
+>
+  Search
+</button>
+`;
+
+exports[`Button > renders with type=submit 1`] = `
+<button
+  class="rounded-md bg-indigo-600 px-5 py-2 text-sm font-medium text-white shadow-sm transition outline-none hover:bg-indigo-700 focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+  type="submit"
+>
+  Send
+</button>
+`;

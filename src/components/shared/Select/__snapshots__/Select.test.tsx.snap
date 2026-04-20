@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Select > renders disabled state 1`] = `
+<select
+  class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm transition outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-indigo-600"
+  disabled=""
+>
+  <option>
+    None
+  </option>
+</select>
+`;
+
+exports[`Select > renders with options 1`] = `
+<select
+  class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm transition outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-indigo-600"
+>
+  <option
+    selected=""
+    value=""
+  >
+    Choose...
+  </option>
+  <option
+    value="a"
+  >
+    Option A
+  </option>
+  <option
+    value="b"
+  >
+    Option B
+  </option>
+</select>
+`;

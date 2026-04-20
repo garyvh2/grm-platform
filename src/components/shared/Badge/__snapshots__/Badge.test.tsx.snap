@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Badge > renders with multi-word content 1`] = `
+<span
+  class="inline-block rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-700"
+>
+  digital download
+</span>
+`;
+
+exports[`Badge > renders with text content 1`] = `
+<span
+  class="inline-block rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-700"
+>
+  streaming
+</span>
+`;
